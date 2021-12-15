@@ -1,0 +1,90 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+.farm{
+
+    /* height: fit-content; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: dotted; */
+}
+
+.raper{
+    padding: 3rem 9rem;
+    border:1.5px dotted var(--primary);
+}
+
+.farm div h3{
+    font-weight: bolder;
+    font-size: 30px;
+    /* color: violet; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.f{
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    margin:1rem;
+    align-items: center;
+    width: 100%;
+}
+.f input{
+    margin: 1rem 0;
+    height: 2.5rem;
+    width: 19rem;
+    border: 1.2px solid var(--dark);
+    border-radius: 20px;
+    padding-left: 1rem;
+
+    
+}
+
+
+.btn1{
+    letter-spacing: 1px;
+    margin-top: 1rem;
+}
+
+
+.logomm{
+    visibility: hidden;
+    width: 0px;
+}
+@media (max-width:450px){
+    *{
+       padding: 0;
+       margin: 0;
+    }
+    .logomm{
+        visibility: visible;
+        
+    }
+
+    .head{
+        width: 100%;;
+        
+    }
+
+    .f input{
+        padding:-2rem;
+       
+        padding-left:-1rem;
+    }
+    .farm .raper{
+        width: 100%;
+        /* padding: 0rem -20rem; */
+    }
+
+    .farm .raper h3{
+        display: flex;
+        align-items: center;
+        width: max-content;
+        font-size: 20px;
+    }
+}

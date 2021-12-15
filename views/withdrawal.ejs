@@ -1,0 +1,149 @@
+<!DOCTYPE .ejs>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdrawal</title>
+    <link rel="stylesheet" href="../static/css/style-login.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+<style>
+    .login-form {
+    margin: 2rem 0;
+    width: max-content;
+    /* height: calc(100vh - 220px); */
+    /* padding: 9rem; */
+    /* text-align: center; */
+}
+
+.login-form form{
+    background-color: white;    
+    border: 1px solid #dddddd;
+    padding: 2rem ;
+    text-align: center;
+    margin-bottom:1rem ;
+    /* width: 100%; */
+
+    /* background-color: whitesmoke; */
+    /* padding-top: 4; */
+}
+
+.flex-cal{
+    flex-direction: column;
+}
+.text-start{
+    text-align: start;
+    font-size: small;
+    font-weight: 600;
+}
+
+.mt-1{
+    margin: 0.6rem 0;
+}
+.mt-05{
+    margin: 0.4rem 0;
+    align-items: center;
+    width: 230px;
+    padding: 0.6rem;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    
+}
+
+.sp{
+    margin-left: 1rem;
+}
+
+.sp a{
+    text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+
+    
+    <div class="main-raper">
+        <button class="hamberger">
+            <img src="../static/img/hamberger.png" alt="">
+           
+           
+        </button>
+        <img class="m-lo" src="../static/img/tron.png" alt="">
+    
+        <div class="mobile-nav">
+            <button class="times">
+                <img src="../static/img/times.svg" alt="">
+            </button>
+            <a href="/"><img class="nav-logo-s" src="../static/img/tron.png" alt=""></a>
+            <ul class="faq1">
+            
+               <li><a href="/user/">Home</a></li> 
+               <li><a href="/user/deposit">Deposit</a></li>
+                <li><a href="/user/plan">Purchase</a></li>
+                <li> <a href="/user/withdrawal">Withdrawal</a></li>
+                <li> <a href="/user/histry">History</a></li>
+                <li> <a href="/user/logout">Logout</a></li>
+            </ul>
+            
+        </div>
+        <header class="head">
+    
+            <div class="container www">
+                <nav class="flex items-center space-between">
+                  
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <a href="/"><img class="logo" src="../static/img/tron.png" alt=""></a>
+                        </div>
+    
+                        <div class="top-link">
+                            <a href="/user/">Home</a>
+                            <a href="/user/deposit">deposit</a>
+                            <a href="/user/withdrawal">Withdrawal</a>
+                            <a href="/user/histry">History</a>
+                            <a href="/user/plan">Purchase</a>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <img class="mlogo" src="../static/img/tron.png" alt="">
+                    <div class="right">
+                        <form action="logout" class="form-group " >
+                            <button type="submit" class="btn btn-primary" >Log out</button>
+                           </form>
+                           <!-- <a style="text-decoration: none; color: ;" class="btn btn-primary" href="logout">Log out</a> -->
+                    </div>
+                </nav>
+
+            
+        
+            <section style="width: 100%;" class="flex justify-center log-s">
+                <div class="login-form items-center">
+                    <form action="/user/wid" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <samp class="flex flex-cal">
+                            <h4 style="margin-top: -1rem; margin-bottom: 0.6rem;">Account Balance Is <%= data.aBlaince %> TRX</h4>
+                            <input name="balince" class="mt-05" type="number" id="Email" placeholder="Balance" required>
+                        </samp>
+                        <div class="flex flex-cal mt-1">
+                            <input name="address" class="mt-05 flex" type="text" id="password" placeholder="Trx Addears" required>
+                            
+                        </div>
+                       
+                        <div class="flex justify-center" >
+                            <button style="border-radius: 5px; padding:0.6rem 1rem ;" class="btn-s btn-primary-s ">Withdrawal</button>
+                        </div>
+            
+                    </form>
+              
+                </div>
+            </section>
+            </div>
+        </header>
+           
+
+<script src="../static/js/app.js"></script>
+</body>
+

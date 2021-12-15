@@ -1,0 +1,200 @@
+<!DOCTYPE .ejs>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>purchase</title>
+    <link rel="stylesheet" href="../static/css/style-login.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</style>
+</head>
+<body>
+
+    <div class="main-raper">
+        
+    <div class="main-raper">
+        <button class="hamberger">
+            <img src="../static/img/hamberger.png" alt="">
+           
+           
+        </button>
+        <img class="m-lo" src="../static/img/tron.png" alt="">
+    
+        <div class="mobile-nav">
+            <button class="times">
+                <img src="../static/img/times.svg" alt="">
+            </button>
+            <a href="/"><img class="nav-logo-s" src="../static/img/tron.png" alt=""></a>
+            <ul class="faq1">
+               <li><a href="/user/">Home</a></li> 
+               <li><a href="/user/deposit">Deposit</a></li>
+               <li><a href="/user/plan">Purchase</a></li>
+               <li> <a href="/user/withdrawal">Withdrawal</a></li>
+                <li> <a href="/user/logout">Logout</a></li>
+               
+            </ul>
+            <style>
+                
+            </style>
+            
+        </div>
+        <header class="head">
+    
+            <div class="container www ">
+                <nav class="flex items-center space-between">
+                  
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <a href="/"><img class="logo" src="../static/img/tron.png" alt=""></a>
+                        </div>
+    
+                        <div class="top-link">
+                            <a href="/user/">Home</a>
+                            <a href="deposit">deposit</a>
+                            <a href="withdrawal">Withdrawal</a>
+                            <a href="/user/histry">History</a>
+                            <a href="plan">Purchase</a>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                    <img class="mlogo" src="../static/img/tron.png" alt="">
+                    <div class="right">
+                        <form action="logout" class="form-group " >
+                            <button type="submit" class="btn btn-primary" >Log out</button>
+                           </form>
+                           <!-- <a style="text-decoration: none; color: ;" class="btn btn-primary" href="logout">Log out</a> -->
+                    </div>
+                </nav>
+
+               
+
+                
+                <div class="mine-d mfors">
+                 
+                    <div class="s-b-n flex">
+                    <h3>Purchase Balance</h3>
+                    <span class="lll"> <%= data.pBlaince %>  TRX</span>
+                    <a href="deposit"><button class="btn-s btn-primary-s"> Deposit</button></a>
+                    </div>
+                    <div class="s-b-n flex">
+                    <h3>Withdrawal Balance </h3>
+                    <span class="lll"><%= data.aBlaince %> TRX</span>
+                    <a href="withdrawal"><button class="btn-s btn-primary-s"> Withdrawal</button></a>
+                    </div>
+                    
+                </div>
+            </div> 
+            <main class="container mobile-plan">
+                <div  id="packg" class="plan">
+                    <div class="c-plan"> 
+                        <h2>BASIC</h2>
+                        <h3 class="price">20 TRON</h3>
+                        <h3>Earning rate (Daily)</h3>
+                        <h5>1.00000000 TRON</h5>
+                        <h3>Time</h3>
+                        <p>50 days</p>
+                        <h3>Total Return</h3>
+                        <p>30.00 TRON</p>
+                       <% if (data.pBlaince >= 20){ %>
+
+                        <form action="/user/bplan" method="post">
+                            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button onclick="myFunction1()" class="btn btn-primary bt-mine">Start Now</button>
+                            <script>
+                                function myFunction1() {
+                                    alert("Success BASIC Plan Activated ");
+                                }
+                                </script>
+                                </form>
+                                    <%   %>
+                     <%  } %>
+                      
+                     <% if (data.pBlaince < 20) { %>
+                        <button onclick="myFunction()" class="btn btn-primary bt-mine">Start Now</button>
+                        <script>
+                            function myFunction() {
+                              alert("Sorry Your Balince Is <%= data.pBlaince %> Trx");
+                            }
+                            </script>
+                      <%  } %>
+                      
+                    </div>
+                    <div class="c-plan"> 
+                        <h2>NORMAL</h2>
+                        <h3 class="price">50 TRON</h3>
+                        <h3>Earning rate (Daily)</h3>
+                        <h5>3.50000000 TRON</h5>
+                        <h3>Time</h3>
+                        <p>30 days</p>
+                        <h3>Total Return</h3>
+                        <p>105.00 TRON</p>
+                        <% if (data.pBlaince >= 50){ %>
+
+                            <form action="/user/nplan" method="post">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button onclick="myFunctionn1()" class="btn btn-primary bt-mine">Start Now</button>
+                            <script>
+                                function myFunctionn1() {
+                                  alert("Success NORMAL Plan Activated");
+                                }
+                                </script>
+                                </form>
+                 <%  } %>
+                  
+                 <% if (data.pBlaince < 50) { %>
+                    <button onclick="myFunctionn()" class="btn btn-primary bt-mine">Start Now</button>
+                    <script>
+                        function myFunctionn() {
+                          alert("Sorry Your Balince Is <%= data.pBlaince %> Trx");
+                        }
+                        </script>
+                  <%  } %>
+                    </div>
+                    <div class="c-plan"> 
+                        <h2>PRIMEM</h2>
+                        <h3 class="price">100 TRON</h3>
+                        <h3>Earning rate (Daily)</h3>
+                        <h5>7.00000000 TRON</h5>
+                        <h3>Time</h3>
+                        <p>35 days</p>
+                        <h3>Total Return</h3>
+                        <p>245.00 TRON</p>
+                        <% if (data.pBlaince >= 100){ %>
+
+                            <form action="/user/pplan" method="post">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                            <button onclick="myFunctionp()" class="btn btn-primary bt-mine">Start Now</button>
+                            <script>
+                                function myFunctionp() {
+                                  alert("Success PRIMEM Plan Activated");
+                                }
+                                </script>
+                                </form>
+                 <%  } %>
+                  
+                 <% if (data.pBlaince < 100) { %>
+                    <button onclick="myFunctionp()" class="btn btn-primary bt-mine">Start Now</button>
+                    <script>
+                        function myFunctionp() {
+                          alert("Sorry Your Balince Is <%= data.pBlaince %> Trx");
+                        }
+                        </script>
+                  <%  } %>
+                    </div>
+                </div>
+            </main>
+           
+        </header>
+
+        
+</div>    
+
+
+    
+
+<script src="../static/js/app.js"></script>
+</body>

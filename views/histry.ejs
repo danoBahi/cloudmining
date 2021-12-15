@@ -1,0 +1,92 @@
+<!DOCTYPE .ejs>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account History</title>
+    <link rel="stylesheet" href="../static/css/style-login.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+
+</style>
+</head>
+<body>
+
+    <div class="main-raper">
+        <button class="hamberger">
+            <img src="../static/img/hamberger.png" alt="">
+           
+        </button>
+        <img class="m-lo" src="../static/img/tron.png" alt="">
+    
+        <div class="mobile-nav">
+            <button class="times">
+                <img src="../static/img/times.svg" alt="">
+            </button>
+            <a href="/"><img class="nav-logo-s" src="../static/img/tron.png" alt=""></a>
+            <ul class="faq1">
+                <li> <a href="/user/">Home</a></li>
+                <li> <a href="deposit">deposit</a></li>
+                 <li><a href="/user/plan">purchase</a></li>
+                 <li> <a href="/user/Withdrawal">Withdrawal</a></li>
+                 <li> <a href="/user/histry">History</a></li>
+            </ul>
+        </div>
+        <header class="head">
+    
+            <div class="container www">
+                <nav class="flex items-center space-between">
+                    <div class="left flex items-center">
+                        <div class="branding">
+                            <a href="../static/index.ejs"><img class="logo" src="../static/img/tron.png" alt=""></a>
+                        </div>
+    
+                        <div class="top-link">
+                            <a href="/user/">Home</a>
+                            <a href="deposit">deposit</a>
+                            <a href="/user/withdrawal">Withdrawal</a>
+                            <a href="/user/plan">purchase</a>
+                            <a href="/user/histry">Hisstry</a>
+                            
+                        </div>
+                    </div>
+                    
+                    <img class="mlogo" src="../static/img/tron.png" alt="">
+                    <div class="right">
+                       <form action="contact">
+                        <button class="btn btn-primary" >Contact</button>
+                       </form>
+                    </div>
+                </nav>
+</div>    
+
+<div style="height: max-content;" class="mine-d ">
+   
+    <div   class="s-b-n   flex ">
+        <% if (data.lenght != 0){ %>
+        
+            <%  data.forEach((Plans)=>{ %>
+        <div style="width: max-content;justify-content: space-around; " class="s-b-n ssp flex">
+       
+                    <h4 style="margin: 0 1rem;" > Username : <%= Plans.username%></h4>
+                    <h4 style="margin: 0 1rem;">Balince : <%= Plans.balince %> Trx</h4>
+                    <p style="margin: 0 1rem;"> date : <%= moment(Plans.created).format('DD-MM-yyy') %></p>
+                    <h4 style="margin: 0 1rem;"> Static : <%= Plans.static %></h4>
+
+                   
+
+                </div>
+                <% })  %>
+                <% }  %>
+                <% if (data = 'undefined'){ %>
+                <h2>Not Found</h2>
+            <% } %>
+               <h1></h1>
+           
+    </div>
+
+
+</div>
+
+<script src="../static/js/app.js"></script>
+</body>
